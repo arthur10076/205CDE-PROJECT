@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Dashboard<small> Welcome {{session.username}}</small></h1>
+	<a class="btn btn-success" href="/add_recipe">Add Recipe</a>
+	<hr>
+	<table class="table table-striped">
+	 <tr>
+	  <th>ID</th>
+	  <th>Titile</th>
+	  <th>Author</th>
+	  <th>Date</th>
+	
+
+
+	 </tr>
+
+	 {% for recipe in recipes %}
+	  <tr>
+	   <td>{{recipe.id}}</td>
+	   <td>{{recipe.title}}</td>
+	   <td>{{recipe.author}}</td>
+	   <td>{{recipe.create_date}}</td>
+	
+
+
+	  </tr>
+	 {% endfor %}
+	</table>
+
+{% endblock %}
